@@ -1,0 +1,39 @@
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
+  <a href="#" class="brand-link">
+    <span class="brand-text font-weight-light">Organizer System</span>
+  </a>
+
+  <div class="sidebar">
+    <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+      <div class="info">
+        <a href="#" class="d-block"><i class="fas fa-user mr-1"></i> <%= data.name %></a>
+        <a href="#" class="d-block">Role: <span class="badge badge-success"><%= data.role %></span></a>
+      </div>
+    </div>
+
+    <nav class="mt-2">
+      <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu">
+
+        <% if (data.role === 'organizer') { %>
+          <li class="nav-header">ORGANIZER ACTIONS</li>
+          <li class="nav-item">
+            <a href="/organizer/dashboard" class="nav-link active">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <p>Dashboard</p>
+            </a>
+          </li>
+
+        <% } else if (data.role === 'attendee') { %>
+          <li class="nav-header">ATTENDEE ACTIONS</li>
+          <li class="nav-item">
+            <a href="/attendee/dashboard" class="nav-link active">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <p>Dashboard</p>
+            </a>
+          </li>
+        <% } %>
+
+      </ul>
+    </nav>
+  </div>
+</aside>
